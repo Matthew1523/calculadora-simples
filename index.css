@@ -1,0 +1,109 @@
+/* Box*/
+
+html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Arial;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.btn{
+    background-color: rgb(248, 248, 248);
+}
+
+#calculatorBody{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(207, 206, 206);
+}
+
+
+#display{
+    color: red;
+    font-weight: 800;
+    background-color: rgba(40, 142, 236, 0.301);
+    padding: 20px;
+    text-align: end;
+    
+}
+
+#calculatorInputs{
+    padding: 10px 0;
+    display: flex;
+    column-gap: 20px;
+    align-items:flex-start;
+}
+
+
+#numbers{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+
+#operators{
+    display: flex;
+}
+
+#cleanButtons{
+    display: flex;
+}
+
+#nonZero{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#numberZero{
+    width: initial;
+}
+/* Children Box*/
+
+ul{
+    padding: 0;
+}
+
+
+.num, .operator, .cleanButton{
+    flex: 0 1 16px;
+    list-style-type: none;
+    flex-direction: column;
+    padding: 16px;
+    
+    width: 16px;
+    
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.num:hover, .operator:hover, .cleanButton:hover{
+    font-weight: 500;
+    background-color: rgb(201, 201, 201);
+}
+
+
+.numberGroup{
+    display:flex;
+}
+
+
+
+
+
+
