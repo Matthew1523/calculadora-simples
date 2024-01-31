@@ -3,12 +3,14 @@
 html{
     padding: 0;
     margin: 0;
+    height: 100vh;
     box-sizing: border-box;
 }
 
 
 body{
     font-family: Arial;
+    background-color: rgb(26, 26, 26);
 }
 
 header{
@@ -17,25 +19,39 @@ header{
     margin: 10px 0;
 }
 
+main{
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
 .btn{
     background-color: rgb(248, 248, 248);
 }
 
 #calculatorBody{
-    width: 100%;
+    width: 80vw;
+    height:inherit;
+    padding: 0 0 12px 0;
+    border-radius: 10px;
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgb(207, 206, 206);
+    background-color: rgb(223, 223, 223);
 }
 
 
 #display{
-    color: red;
+    color: rgb(0, 0, 0);
+    align-self: normal;
+    justify-self:flex-start;
     font-weight: 800;
-    background-color: rgba(40, 142, 236, 0.301);
+    height: 50px;
+    background-color: rgba(82, 87, 92, 0.301);
     padding: 20px;
-    text-align: end;
+    text-align: start;
     
 }
 

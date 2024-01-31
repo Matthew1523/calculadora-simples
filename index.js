@@ -3,12 +3,12 @@
 var Calculator = {
   body: document.getElementById('calculatorBody'), // const
   display: document.getElementById('display'),     // let
-  btnsInput: document.querySelectorAll('.btn'),
-  charsLimit: document.querySelector('#limitChecker'),     // let
+  btnsInput: document.querySelectorAll('.btn'),    // let
+  charsLimit: document.querySelector('#limitChecker'), 
 
   operators: ["*", "/", "+", "-"],
   miscBtns: ["C", "AC"],
-  historyMemory: []
+  perfomedCalculationMemory: []
 }
 
 
@@ -38,9 +38,6 @@ function main(){
   }
 }
 
-
-
-
 function typing(){
 
   let btnString;
@@ -65,9 +62,6 @@ function typing(){
   }
 }
 
-
-
-
 function checkDigitLimit(){
   
   let displayLength, limitString, limitExceedMessage;
@@ -89,8 +83,9 @@ function checkDigitLimit(){
   }
 }
 
+function arrayToString(){
 
-
+}
 
 function clean(key){
   
@@ -103,98 +98,97 @@ function clean(key){
   else if(key === "AC"){
     Calculator.display.textContent = "0";
   }
-
 }
-
-
-
 
 function showUpHistory(){
   // TODO Checking Memory
   // if Calculator History is empty, then...
   // else...
+
+let memory;
 }
 
-
-
-
-
-// MEU FOCO DE HOJE!!!
 function splitString(str){
   
-  // let thePerfectString = "19+86*3";
   let arrayNums, arrayOperators;
-  let numRegex, operatorsRegex
+  let numRegex, operatorsRegex;
 
   // TODO encontrar forma de separar TODOS os operadores encontrados  
 
   numRegex = /\d+/g;
   operatorsRegex = /[*/+-]/g;
   
+
+  // Entender melhor esse negócio aqui
   arrayNums = [...str.matchAll(numRegex)];
   arrayOperators = [...str.matchAll(operatorsRegex)];
 
-  // TODO Create a handling error
-  calculate(arrayNums, arrayOperators);
+  // CRIAR FUNÇÃO URGENTE PRA ISSO DAQUI!!!
+  for(let key in arrayNums){
+    arrayNums[key] = parseInt(arrayNums[key], 10);
+  }
+
+
+  for(let key in arrayOperators){
+    arrayOperators[key] = String(arrayOperators[key]);
+  }
+
+
+  let result = calculate(arrayNums, arrayOperators);
+  console.log(result);
 
 }
 
-
-
 function calculate(nums, operators){
   
-  let temp;
+  let temp_output, final_output;
   let result;
 
-  // Find operator following the PEMDA rule
-      // identificar index
+  // First -> performe calculation in this order: [*, /, +, -]
+
+  // Handling empty array error
+if(operators.length != 0){
+  
+  let operator;
   
 
-/* A partir do operador, efetuar operação 
-  inicial: recolocar resultado
-  final: eliminar número posterior
+  /*
+  
+  Encontrar ocorrências de 
 
+  */
 
+  for(let key=0; key < operators.length; key++){  
+    operator = operators[key];
 
-*/
-
-
-  // 0, 1
-  // 0
-
-  // a, a+1
-  // a
-
-
-  // n-1, n
-  // n-1
-
-    // Separate from num
-
-  while(operators.length != 0){
-    switch (operators) {
-      case '*':
-        
-        console.log(operators.findIndex("*"));
-        result = nums[nums.length-1] * nums[nums.length-2];
+    switch(operator) {
+      case "*":
+        alert(temp_output = nums[key] * nums[key+1]);
         break;
       case '/':
-        output = nums[nums.length-1] * nums[nums.length-2];
+        alert(temp_output = nums[key] / nums[key+1]);
         break
       case '+':
-        output = nums[nums.length-1] * nums[nums.length-2];
+        alert(temp_output = nums[key] + nums[key+1]);
         break
       case '-':
-        output = nums[nums.length-1] * nums[nums.length-2];
+        alert(temp_output = nums[key] - nums[key+1]);
         break;
       
         default:
         console.log(`Sorry, performing math goes wrong.`);
+
+    // Corrigir isso daqui
+    operators.splice(key, 1);
+    
+    nums.splice(key+1, 1);
+    nums[key] = temp_output;
+    
+    result += temp_output;
+
+
     }
-
-
-    operators.pop();
-
+  }
 }
 
   return result;
@@ -208,20 +202,3 @@ function result(){
 
 
 main()
-
-/*
-Buttons
-
-C  - clear last digits
-AC - clear all operation and numbers from display, taking display's values equal 0
-
-Warning
-
-ERR - conditions to pop up error on calculator screen
-1. User can see 'ERR' displayed if any operation would exceed the 8 digit maximum.
-
-*/
-
-
-
-

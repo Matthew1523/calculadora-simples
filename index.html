@@ -9,71 +9,68 @@
 </head>
 <body>  
 
-<header>
-    <h1>Calculadora</h1>
-</header>
 
-<div id="calculatorBody">
 
-    <div id="display"></div>
+<main>
+    <div id="calculatorBody">
+        <div id="display"></div>
+        <div id="limitChecker">
+            <p></p>
+        </div>
 
-    <div id="limitChecker">
-        <p></p>
-    </div>
-
-    <div id="calculatorInputs">
-        <div id="numbers">
+        <div id="calculatorInputs">
+            <div id="numbers">
+                
+                <div id="nonZero">
+                    <div class="numberGroup">
+                        <li class="num btn">1</li>
+                        <li class="num btn">2</li>
+                        <li class="num btn">3</li>
+                    </div>
             
-            <div id="nonZero">
-                <div class="numberGroup">
-                    <li class="num btn">1</li>
-                    <li class="num btn">2</li>
-                    <li class="num btn">3</li>
+                    <div class="numberGroup">
+                        <li class="num btn">4</li>
+                        <li class="num btn">5</li>
+                        <li class="num btn">6</li>
+                    </div>
+                    
+                    <div class="numberGroup">
+                        <li class="num btn">7</li>
+                        <li class="num btn">8</li>
+                        <li class="num btn">9</li>
+                    </div>
                 </div>
-        
-                <div class="numberGroup">
-                    <li class="num btn">4</li>
-                    <li class="num btn">5</li>
-                    <li class="num btn">6</li>
-                </div>
-                
-                <div class="numberGroup">
-                    <li class="num btn">7</li>
-                    <li class="num btn">8</li>
-                    <li class="num btn">9</li>
-                </div>
+                    
+                <div class="numberGroup"></div>
+                    <li id="numberZero" class="num btn">0</li>
             </div>
-                
-            <div class="numberGroup"></div>
-                <li id="numberZero" class="num btn">0</li>
-        </div>
-        
-        <ul id="operators">
-            <li class="operator btn">+</li>
-            <li class="operator btn">-</li>
-            <li class="operator btn">*</li>
-            <li class="operator btn">/</li>
-        </ul>
-        
-        <ul id="cleanButtons">
-            <li class="cleanButton btn">C</li>
-            <li class="cleanButton btn">AC</li>
-        </ul>
-        
-        <div id="cleanKeys">
-            <button id='click' class="btn">Enter</button>
-            <button id='operationHistory' class="btn">Show History</button>
-        </div>
+            
+            <ul id="operators">
+                <li class="operator btn">+</li>
+                <li class="operator btn">-</li>
+                <li class="operator btn">*</li>
+                <li class="operator btn">/</li>
+            </ul>
+            
+            <ul id="cleanButtons">
+                <li class="cleanButton btn">C</li>
+                <li class="cleanButton btn">AC</li>
+            </ul>
+            
+            <div id="cleanKeys">
+                <button id='click' class="btn">Enter</button>
+                <button id='operationHistory' class="btn">Show History</button>
+            </div>
 
-        <div>
-            <button id="equal" class="btn">=</button>
+            <div>
+                <button id="equal" class="btn">=</button>
+            </div>
+        
+
         </div>
-    
 
     </div>
-
-</div>
-
+</main>
 
 
 
